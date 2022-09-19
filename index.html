@@ -21,12 +21,13 @@
 
 <script>
 
-const url = 'http://127.0.0.1:5500/demo';
+const url = window.location.host;
+console.log(window.location.host);
 
 
   function go(loc) {
     
-    let fullUrl = (url + loc +'/home.html');
+    let fullUrl = ('/demo'+ loc +'/home.html');
     
     document.getElementById('Path').src = fullUrl;
     console.log("fullPath :" + fullUrl);
@@ -37,11 +38,18 @@ const url = 'http://127.0.0.1:5500/demo';
 </head>
 <body style="margin:0px; overflow: hidden;"  >
 
+  <script>
+
+    window.addEventListener('load', (event) => {
+    go(0);
+});
+  </script>
+
 
 
 <div class="container"> 
   
-  <iframe class="responsive-iframe" id="Path"  src="http://127.0.0.1:5500//demo0/home.html"></iframe>
+  <iframe class="responsive-iframe" id="Path"  src=""></iframe>
 </div>
 
 </body>
